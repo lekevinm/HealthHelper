@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "627320309229",
+    "firebase_url": "https://healthhelper-101e4.firebaseio.com",
+    "project_id": "healthhelper-101e4",
+    "storage_bucket": "healthhelper-101e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627320309229:android:5b62b8d09f8edf4c",
+        "android_client_info": {
+          "package_name": "cs125.healthhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627320309229-ga5k0o1udu1ai5gn85tf96dlkrnf67as.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cs125.healthhelper",
+            "certificate_hash": "56852f4e110989e93f075b1164977222395867bd"
+          }
+        },
+        {
+          "client_id": "627320309229-speaqs6g35cop3mqomg4e2a6gj33m551.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZPoyvwG6MUUByAFLydeUxAEhGRN5T-cY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627320309229-speaqs6g35cop3mqomg4e2a6gj33m551.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
