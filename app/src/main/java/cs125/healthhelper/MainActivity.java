@@ -1,10 +1,13 @@
 package cs125.healthhelper;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import android.app.Fragment;
@@ -13,6 +16,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -77,5 +81,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void usdaSearch(View view){
+        Intent createIntent = new Intent(this, USDASearchActivity.class);
+
+        startActivity(createIntent);
+    }
+
+    public void manualFoodInput(View view){
+        Intent createIntent = new Intent(this, FoodEntryActivity.class);
+
+        startActivity(createIntent);
+    }
+
+    public void manualFitnessInput(View view){
+        Intent createIntent = new Intent(this, FitnessEntryActivity.class);
+
+        startActivity(createIntent);
+    }
+
+    public void addFoodGoal(View view){
+        Intent createIntent = new Intent(this, SettingsActivity.class);
+
+        startActivity(createIntent);
+    }
+
+    public void addFitnessGoal(View view){
+        Intent createIntent = new Intent(this, SettingsActivity.class);
+
+        startActivity(createIntent);
+    }
+
+    public void userSettings(View view){
+        Intent createIntent = new Intent(this, SettingsActivity.class);
+
+        startActivity(createIntent);
+    }
 
 }
