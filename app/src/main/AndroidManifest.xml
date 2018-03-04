@@ -29,6 +29,8 @@
         <activity android:name=".FitnessEntryActivity" />
         <activity android:name=".USDASearchActivity" />
         <activity android:name=".SettingsActivity" />
+        <activity android:name=".FoodGoalActivity" />
+        <activity android:name=".FitnessGoalActivity"></activity>
     </application>
 
 </manifest>

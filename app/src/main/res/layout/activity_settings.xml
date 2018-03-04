@@ -98,9 +98,9 @@
         android:layout_height="wrap_content"
         android:onClick="setWeight"
         android:text="Set"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Weight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Weight"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintStart_toEndOf="@+id/Weight" />
 
     <Button
         android:id="@+id/AddAllergy"
@@ -109,8 +109,8 @@
         android:layout_marginStart="8dp"
         android:onClick="addAllergy"
         android:text="Add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Allergy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Allergy"
-        tools:layout_editor_absoluteY="183dp" />
+        app:layout_constraintStart_toEndOf="@+id/Allergy" />
 
 </android.support.constraint.ConstraintLayout>

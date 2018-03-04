@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -34,13 +34,13 @@
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/username"
-        android:layout_marginRight="1dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="75dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="@+id/password"

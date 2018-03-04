@@ -7,20 +7,6 @@
     android:layout_height="match_parent"
     tools:context="cs125.healthhelper.AccountActivity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginTop="16dp"
-        android:text="Password"
-        android:textAppearance="@android:style/TextAppearance.Material.Body2"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
-
     <EditText
         android:id="@+id/password2"
         android:layout_width="wrap_content"
@@ -44,8 +30,7 @@
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877"
-        android:layout_marginLeft="44dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -59,13 +44,14 @@
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="@+id/password"

@@ -24,6 +24,9 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view){
         // after verification, go to MainActivity
+        Intent createIntent = new Intent(this, MainActivity.class);
+
+        startActivity(createIntent);
     }
 
     public void createAccount(View view){
