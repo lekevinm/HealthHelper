@@ -99,14 +99,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(createIntent);
     }
 
-    public void addFoodGoal(View view){
-        Intent createIntent = new Intent(this, FoodGoalActivity.class);
-
-        startActivity(createIntent);
-    }
-
-    public void addFitnessGoal(View view){
-        Intent createIntent = new Intent(this, FitnessGoalActivity.class);
+    public void setGoal(View view){
+        Intent createIntent = new Intent(this, GoalActivity.class);
 
         startActivity(createIntent);
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cs125.healthhelper.FoodGoalActivity">
+    tools:context="cs125.healthhelper.GoalActivity">
 
     <Spinner
         android:id="@+id/NutrientType"
@@ -49,28 +49,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/goalDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:text="Finish goal by"
-        app:layout_constraintBottom_toTopOf="@+id/goalDate"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/NutrientGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -87,17 +66,28 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
         android:text="Nutrient Goal"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/NutrientGoal"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/goalButton"
+        android:id="@+id/setCalorieGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="14dp"
-        android:onClick="createGoal"
-        android:text="Create Goal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goalDate" />
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="63dp"
+        android:onClick="setCalorieGoal"
+        android:text="Set"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/setNutrientGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:onClick="setNutrientGoal"
+        android:text="Set"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="259dp" />
+
 </android.support.constraint.ConstraintLayout>

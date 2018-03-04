@@ -1,7 +1,5 @@
 package cs125.healthhelper;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +9,7 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
-public class FoodGoalActivity extends AppCompatActivity implements OnItemSelectedListener{
+public class GoalActivity extends AppCompatActivity implements OnItemSelectedListener{
 
     private Spinner spinner;
     private static final String[]paths = {"Fat", "Carbs", "Protein"};
@@ -19,10 +17,10 @@ public class FoodGoalActivity extends AppCompatActivity implements OnItemSelecte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_goal);
+        setContentView(R.layout.activity_goal);
 
         spinner = (Spinner)findViewById(R.id.NutrientType);
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(FoodGoalActivity.this,
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(GoalActivity.this,
                 android.R.layout.simple_spinner_item,paths);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -52,7 +50,11 @@ public class FoodGoalActivity extends AppCompatActivity implements OnItemSelecte
         Toast.makeText(this, "NothingSelected", Toast.LENGTH_SHORT).show();
     }
 
+    public void setCalorieGoal(View view){
 
-    public void createGoal(View view){
+    }
+
+    public void setNutrientGoal(View view){
+
     }
 }
