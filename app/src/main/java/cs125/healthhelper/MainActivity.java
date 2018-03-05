@@ -1,32 +1,31 @@
 package cs125.healthhelper;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
-import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
         setupNavigationView();
+
     }
 
     // UI Code taken from Tutorialwing
@@ -61,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_dashboard:
                 pushFragment(new DashFragment());
                 break;
-            case R.id.navigation_notifications:
-                pushFragment(new NotifFragment());
+            case R.id.navigation_recommendations:
+                pushFragment(new RecFragment());
                 break;
         }
     }
@@ -109,6 +108,14 @@ public class MainActivity extends AppCompatActivity {
         Intent createIntent = new Intent(this, SettingsActivity.class);
 
         startActivity(createIntent);
+    }
+
+    public void foodList(View view){
+
+    }
+
+    public void fitnessList(View view){
+
     }
 
 }
