@@ -43,7 +43,7 @@ public class AccountActivity extends AppCompatActivity {
         password2EditText = findViewById(R.id.password2);
 
         TextView warningMessage = findViewById(R.id.warningMessage);
-        warningMessage.setVisibility(View.GONE);
+        warningMessage.setVisibility(View.INVISIBLE);
     }
 
     @Override

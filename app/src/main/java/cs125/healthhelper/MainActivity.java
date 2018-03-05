@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
 import android.widget.Toast;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -109,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
         Intent createIntent = new Intent(this, SettingsActivity.class);
 
         startActivity(createIntent);
+    }
+
+    public void logout(View view)
+    {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 
 }
