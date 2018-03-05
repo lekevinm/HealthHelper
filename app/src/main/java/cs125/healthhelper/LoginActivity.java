@@ -24,9 +24,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
-<<<<<<< HEAD
-    
-=======
 
     private static final String TAG = "LoginActivity";
 
@@ -35,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText;
     private EditText passwordEditText;
 
->>>>>>> origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

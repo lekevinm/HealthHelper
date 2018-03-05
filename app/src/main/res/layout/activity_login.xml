@@ -17,7 +17,8 @@
         android:text="E-mail"
         android:textAppearance="@android:style/TextAppearance.Material.Body2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="44dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -28,7 +29,8 @@
         android:text="Password"
         android:textAppearance="@android:style/TextAppearance.Material.Body2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        android:layout_marginLeft="44dp" />
 
     <EditText
         android:id="@+id/email"
@@ -63,7 +65,8 @@
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:layout_marginLeft="31dp" />
 
     <Button
         android:id="@+id/button3"
@@ -76,5 +79,6 @@
         android:text="Create Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:layout_marginLeft="44dp" />
 </android.support.constraint.ConstraintLayout>
