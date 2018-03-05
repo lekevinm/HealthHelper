@@ -14,6 +14,11 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.view.Menu;
+<<<<<<< HEAD
+=======
+import android.widget.Toast;
+import com.google.firebase.auth.FirebaseAuth;
+>>>>>>> origin/master
 
 import java.util.ArrayList;
 
@@ -110,12 +115,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(createIntent);
     }
 
+<<<<<<< HEAD
     public void foodList(View view){
 
     }
 
     public void fitnessList(View view){
 
+=======
+    public void logout(View view)
+    {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+>>>>>>> origin/master
     }
 
 }
