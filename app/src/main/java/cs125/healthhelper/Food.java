@@ -28,7 +28,9 @@ public class Food implements Serializable {	//is Serializable so it can be put i
 	//ndbno is used to find info on the food in database
 	public Food(String n, int id) {
 		ndbno = id;
-		name = n;		
+		name = n.trim();
+		if(name.endsWith(","))
+			name = name.substring(0,name.length()-1);
 		
 		bcals = 0;
 		bcarbs = 0;

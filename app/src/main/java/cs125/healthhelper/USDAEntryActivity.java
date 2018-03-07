@@ -88,7 +88,7 @@ public class USDAEntryActivity  extends AppCompatActivity{
         }
         food.amountConsumed(grams);
 
-        nutrient_text.setText("Consumed: \n" +
+        nutrient_text.setText("Consumed: " + grams.toString() + "g\n" +
                 food.calories + " kcal\n" +
                 food.carbs + "g carbs\n" +
                 food.protein + "g protein\n" +
