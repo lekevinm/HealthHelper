@@ -1,13 +1,17 @@
 package cs125.healthhelper;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -18,6 +22,7 @@ public class USDASearchActivity extends AppCompatActivity {
 
     private EditText search;
     private ArrayAdapter<Food> adapter;
+    private ListView listView;
 
 
     @Override
@@ -29,9 +34,19 @@ public class USDASearchActivity extends AppCompatActivity {
         //pair up the listview with an ArrayList<Food> by using an ArrayAdapter
         ArrayList<Food> foodlist = new ArrayList<Food>();
         adapter = new ArrayAdapter<Food>(this, R.layout.food_listview, foodlist);
-        ListView listView = findViewById(R.id.food_listview);
+        listView = findViewById(R.id.food_listview);
         listView.setAdapter(adapter);
-    }
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?>adapter,View v, int position, long l){
+                Food food = (Food)adapter.getItemAtPosition(position);
+                Intent intent = new Intent(getApplication(), USDAEntryActivity.class);
+                intent.putExtra("TheFood",food);
+                startActivity(intent);
+            }
+        });    }
 
     //passes the search query into the USDA client, and updates the listview.
     public void search(View view){
@@ -40,6 +55,10 @@ public class USDASearchActivity extends AppCompatActivity {
         client.setup(adapter);
         client.execute(keyword);
     }
+
+
+
+
 
 
 }

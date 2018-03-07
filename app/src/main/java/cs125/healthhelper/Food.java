@@ -1,8 +1,9 @@
 package cs125.healthhelper;
 
 
+import java.io.Serializable;
 
-public class Food {
+public class Food implements Serializable {
 	
 	public int ndbno;		//id number for the food
 	public String name;
