@@ -40,7 +40,12 @@ public class Food {
 		fat = 0;
 	}
 
-	
+	@Override
+	public String toString(){
+		return name;
+	}
+
+
 	//sets the grams of food consumed
 	//updates the nutrients based on the grams of food
 	public void amountConsumed(float grams) {
