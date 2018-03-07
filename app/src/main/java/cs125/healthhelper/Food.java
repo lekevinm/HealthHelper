@@ -3,7 +3,8 @@ package cs125.healthhelper;
 
 import java.io.Serializable;
 
-public class Food implements Serializable {
+//basic Food class that stores info on a meal
+public class Food implements Serializable {	//is Serializable so it can be put inside an Intent
 	
 	public int ndbno;		//id number for the food
 	public String name;

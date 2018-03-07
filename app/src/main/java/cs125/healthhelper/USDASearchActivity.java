@@ -1,28 +1,22 @@
 package cs125.healthhelper;
 
-import android.app.Activity;
+
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class USDASearchActivity extends AppCompatActivity {
 
     private EditText search;
     private ArrayAdapter<Food> adapter;
-    private ListView listView;
+    private Button search_button;
 
 
     @Override
@@ -30,11 +24,12 @@ public class USDASearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usdasearch);
         search = findViewById(R.id.searchQuery);
+        search_button = findViewById(R.id.searchButton);
 
         //pair up the listview with an ArrayList<Food> by using an ArrayAdapter
         ArrayList<Food> foodlist = new ArrayList<Food>();
         adapter = new ArrayAdapter<Food>(this, R.layout.food_listview, foodlist);
-        listView = findViewById(R.id.food_listview);
+        ListView listView = findViewById(R.id.food_listview);
         listView.setAdapter(adapter);
 
 
@@ -50,9 +45,10 @@ public class USDASearchActivity extends AppCompatActivity {
 
     //passes the search query into the USDA client, and updates the listview.
     public void search(View view){
+        search_button.setText("Searching");
         String keyword = search.getText().toString();
         USDASearchClient client = new USDASearchClient();
-        client.setup(adapter);
+        client.setup(adapter,search_button);
         client.execute(keyword);
     }
 

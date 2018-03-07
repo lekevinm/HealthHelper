@@ -2,6 +2,8 @@ package cs125.healthhelper;
 
 import android.os.AsyncTask;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,24 +31,22 @@ public class USDASearchClient extends AsyncTask<String, Void, String>{
 	private static String APIKEY = "enKmwyWfbRT7dJStQfX4FtgBUTWaxctTti8tBpAd";
     private ArrayAdapter<Food> array_adapter;
     private ArrayList<Food> foodlist;
-
+    private Button search_button;
 
     public USDASearchClient(){
         //can later move setup into the constructor. But kept separate for now.
     }
 
-    public void setup(ArrayAdapter<Food> aa){
+    public void setup(ArrayAdapter<Food> aa, Button b){
         array_adapter = aa;
+        search_button = b;
     }
 
 	/**
-     *
 	 * Asynchronous methods implemented below
 	 * doInBackground will run the network stuff
      * onPostExecute will run after network stuff finishes
-	 *
 	 */
-
 	@Override
 	protected String doInBackground(String... args) {
         try{
@@ -71,18 +71,15 @@ public class USDASearchClient extends AsyncTask<String, Void, String>{
         array_adapter.clear();
         array_adapter.addAll(foodlist); //add the new list of foods into the listview adapter
         array_adapter.notifyDataSetChanged();
+        search_button.setText("Search");
 	}
 
 
 
 	/**
-	 *
 	 * queryFood return a list of Food objects that match a keyword
      * will return an ArrayList of Food items, or null if the method fails.
-     *
      */
-
-
     public ArrayList<Food> queryFood(String keyword) throws IOException, JSONException {
 
         String url1 = "https://api.nal.usda.gov/ndb/search/?format=json&q=";
@@ -96,14 +93,10 @@ public class USDASearchClient extends AsyncTask<String, Void, String>{
 
 
     /**
-     *
-     *
-     * HELPER METHODS BELOW
-	 *
-	 *
-	 */
-
-    
+     * @param string: json string received from api
+     * @return ArrayList<Food>: list of Food objects that was in the json
+     * @throws JSONException
+     */
     private ArrayList<Food> parseFoodList(String string) throws JSONException {
     	try {
 	    	ArrayList<Food> foodlist = new ArrayList<Food>();
