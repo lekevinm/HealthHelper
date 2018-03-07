@@ -53,7 +53,7 @@ public class USDAFoodClient extends AsyncTask<String, Void, String>{
     @Override
     protected void onPostExecute(String s){
         activity.gotInfo = true;
-        activity.updateTextView();
+        activity.loadFoodInfo();
 
     }
 
