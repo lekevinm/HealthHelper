@@ -10,12 +10,12 @@ public class Exercise {
     public int durationMins;
     public int caloriesBurned;
 
-    public void Exercise()
+    public Exercise()
     {
 
     }
 
-    public void Exercise(String name, int duration, int calories)
+    public Exercise(String name, int duration, int calories)
     {
         this.exerciseName = name;
         this.durationMins = duration;
