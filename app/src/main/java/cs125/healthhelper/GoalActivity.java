@@ -1,5 +1,6 @@
 package cs125.healthhelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -67,6 +68,8 @@ public class GoalActivity extends AppCompatActivity{
 
         UserGoals newUserGoal = new UserGoals(calorieGoal, fatGoal, carbGoal, proteinGoal);
         mDatabase.child("goals").child(userID).setValue(newUserGoal);
+        startActivity(new Intent(GoalActivity.this, MainActivity.class));
+
 
     }
 

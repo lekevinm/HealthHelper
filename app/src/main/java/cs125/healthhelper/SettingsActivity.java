@@ -1,5 +1,6 @@
 package cs125.healthhelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseBooleanArray;
@@ -41,8 +42,8 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        userHeight = findViewById(R.id.Height);
-        userWeight = findViewById(R.id.Weight);
+        userHeight = findViewById(R.id.foodInput);
+        userWeight = findViewById(R.id.servingInput);
 
         listview = findViewById(R.id.listView);
         allergies = new ArrayList<String>();
@@ -72,6 +73,8 @@ public class SettingsActivity extends AppCompatActivity {
         getAllergies();
         UserProfile userProfile = new UserProfile(height, weight, allergies);
         mDatabase.child("profiles").child(userID).setValue(userProfile);
+        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+
 
     }
 

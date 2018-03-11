@@ -23,7 +23,7 @@ public class Food implements Serializable {	//is Serializable so it can be put i
 	public float carbs;
 	public float protein;
 	public float fat;
-	
+
 	//Constructs Food with the name and ndbno
 	//ndbno is used to find info on the food in database
 	public Food(String n, int id) {
@@ -42,6 +42,18 @@ public class Food implements Serializable {	//is Serializable so it can be put i
 		protein = 0;
 		carbs = 0;
 		fat = 0;
+	}
+
+	public Food(String n, int grams, int calories, int carbs, int protein, int fat)
+	{
+		this.name = n;
+		this.ndbno = -1;
+
+		this.grams = grams;
+		this.calories = calories;
+		this.carbs = carbs;
+		this.protein = protein;
+		this.fat = fat;
 	}
 
 	@Override
