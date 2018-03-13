@@ -89,7 +89,7 @@
         android:layout_marginStart="17dp"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:hint="Date"
+        android:hint="Date (yyyy/mm/dd)"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/info_text"

@@ -31,7 +31,9 @@
         <activity android:name=".USDASearchActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".GoalActivity" />
-        <activity android:name=".USDAEntryActivity"/>
+        <activity android:name=".USDAEntryActivity" />
+        <activity android:name=".FoodLogActivity" />
+        <activity android:name=".ExerciseLogActivity"></activity>
     </application>
 
 </manifest>
