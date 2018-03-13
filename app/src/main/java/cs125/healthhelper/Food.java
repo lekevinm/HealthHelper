@@ -54,7 +54,16 @@ public class Food implements Serializable {	//is Serializable so it can be put i
 		this.carbs = carbs;
 		this.protein = protein;
 		this.fat = fat;
+
+		this.bcals = 0;
+		this.bcarbs = 0;
+		this.bprotein = 0;
+		this.bfat = 0;
 	}
+
+	public Food()
+	{}
+
 
 	@Override
 	public String toString(){
