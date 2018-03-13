@@ -17,11 +17,9 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.view.Menu;
 
+import com.google.firebase.auth.FirebaseAuth;
 
 
-
-
->>>>>>> ebebc48eca39c319bf57a25ebe3d12d97b0b1ff8
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
