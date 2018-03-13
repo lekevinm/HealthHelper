@@ -31,7 +31,11 @@
         <activity android:name=".USDASearchActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".GoalActivity" />
-        <activity android:name=".USDAEntryActivity"/>
+        <activity android:name=".USDAEntryActivity" />
+        <activity android:name=".FoodRecActivity"></activity>
+        <activity android:name=".FoodRecPopup"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
     </application>
 
 </manifest>

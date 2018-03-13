@@ -7,15 +7,28 @@
     android:layout_height="match_parent"
     tools:context="cs125.healthhelper.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/NotifRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="60dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <Button
+        android:id="@+id/FoodSuggestionsButton"
+        android:onClick="viewFoodRec"
+        android:layout_width="265dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="152dp"
+        android:text="View Food Suggestions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ExerciseSuggestionsButton"
+        android:layout_width="265dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="264dp"
+        android:text="View Exercise Suggestions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

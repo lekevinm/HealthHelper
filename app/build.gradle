@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "cs125.healthhelper"
-        minSdkVersion 15
+        minSdkVersion 26
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -36,4 +36,6 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+
 

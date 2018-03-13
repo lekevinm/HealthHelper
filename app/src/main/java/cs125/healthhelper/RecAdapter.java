@@ -1,94 +1,78 @@
 package cs125.healthhelper;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import android.graphics.Movie;
+import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import cs125.healthhelper.FoodRecommendation;
+import cs125.healthhelper.R;
 
 /**
- * Created by guest on 3/4/18.
+ * Created by wilson on 3/9/2018.
  */
 
-// Create the basic adapter extending from RecyclerView.Adapter
-// Note that we specify the custom ViewHolder which gives us access to our views
-public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
+public class RecAdapter extends ArrayAdapter<FoodRecommendation> implements View.OnClickListener {
 
-    // Provide a direct reference to each of the views within a data item
-    // Used to cache the views within the item layout for fast access
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        // Your holder should contain a member variable
-        // for any view that will be set as you render a row
-        public TextView nameTextView;
-        public Button messageButton;
+    private ArrayList<FoodRecommendation> dataSet;
+    Context mContext;
 
-        // We also create a constructor that accepts the entire item row
-        // and does the view lookups to find each subview
-        public ViewHolder(View itemView) {
-            // Stores the itemView in a public final member variable that can be used
-            // to access the context from any ViewHolder instance.
-            super(itemView);
+    // View lookup cache
+    private static class ViewHolder {
+        TextView recipeName;
+    }
 
-            nameTextView = (TextView) itemView.findViewById(R.id.recommended_name);
-            messageButton = (Button) itemView.findViewById(R.id.recommended_button);
+    public RecAdapter(ArrayList<FoodRecommendation> data, Context context) {
+        super(context, R.layout.recommendation, data);
+        this.dataSet = data;
+        this.mContext = context;
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Placeholder to allow override
+    }
+
+    private int lastPosition = -1;
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // Get the data item for this position
+        FoodRecommendation foodRec = getItem(position);
+        // Check if an existing view is being reused, otherwise inflate the view
+        ViewHolder viewHolder; // view lookup cache stored in tag
+
+        final View result;
+
+        if (convertView == null) {
+            viewHolder = new ViewHolder();
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            convertView = inflater.inflate(R.layout.recommendation, parent, false);
+            viewHolder.recipeName = (TextView) convertView.findViewById(R.id.recommended_name);
+
+            result = convertView;
+
+            convertView.setTag(viewHolder);
         }
-    }
+        else {
+            viewHolder = (ViewHolder) convertView.getTag();
+            result = convertView;
+        }
 
-    // Store a member variable for the contacts
-    private List<Recommendation> mRecommended;
-    // Store the context for easy access
-    private Context mContext;
+        Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
+        result.startAnimation(animation);
+        lastPosition = position;
 
-    // Pass in the contact array into the constructor
-    public RecAdapter(Context context, ArrayList<Recommendation> recommendations) {
-        mRecommended = recommendations;
-        mContext = context;
-    }
-
-    // Easy access to the context object in the recyclerview
-    private Context getContext() {
-        return mContext;
-    }
-
-    // Usually involves inflating a layout from XML and returning the holder
-    @Override
-    public RecAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.recommendation, parent, false);
-
-        // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(contactView);
-        return viewHolder;
-    }
-
-    // Involves populating data into the item through holder
-    @Override
-    public void onBindViewHolder(RecAdapter.ViewHolder viewHolder, int position) {
-        // Get the data model based on position
-        Recommendation contact = mRecommended.get(position);
-
-        // Set item views based on your views and data model
-        TextView textView = viewHolder.nameTextView;
-        textView.setText(contact.getRecommended());
-        Button button = viewHolder.messageButton;
-        button.setText("Details");
-        //button.setText(contact.isOnline() ? "Message" : "Offline");
-        //button.setEnabled(contact.isOnline());
-    }
-
-    // Returns the total count of items in the list
-    @Override
-    public int getItemCount() {
-        return mRecommended.size();
+        viewHolder.recipeName.setText(foodRec.getRecipeName());
+        // Return the completed view to render on screen
+        return convertView;
     }
 }
