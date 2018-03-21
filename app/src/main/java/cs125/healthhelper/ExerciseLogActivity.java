@@ -82,7 +82,7 @@ public class ExerciseLogActivity extends AppCompatActivity {
 
         // Populates ListView
         adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_single_choice,
+                R.layout.custom_simple_list_single_choice,
                 listItems);
         exerciseListView.setAdapter(adapter);
         exerciseListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -187,15 +187,23 @@ public class ExerciseLogActivity extends AppCompatActivity {
                 adapter.clear();
                 listKeys.clear();
 
+
+
                 while (iterator.hasNext()) {
                     DataSnapshot next = iterator.next();
                     Exercise exercise = next.getValue(Exercise.class);
+
+                    if (exercise.exerciseName == null)
+                        break;
+
 
                     String exerciseString = exercise.exerciseName + "(duration: " + exercise.durationMins + "mins, calories burned: "
                             + exercise.caloriesBurned + " kcals)";
 
                     String key = next.getKey();
                     listKeys.add(key);
+
+
                     adapter.add(exerciseString);
                 }
 
@@ -213,7 +221,9 @@ public class ExerciseLogActivity extends AppCompatActivity {
     public void deleteItem(View view)
     {
         String dateString = dateField.getText().toString();
+        //if(!dateString.equals("No Exercises recorded for this day.")){
         exerciseListView.setItemChecked(selectedPosition, false);
         mDatabase.child(dateString).child(listKeys.get(selectedPosition)).removeValue();
+        //}
     }
 }

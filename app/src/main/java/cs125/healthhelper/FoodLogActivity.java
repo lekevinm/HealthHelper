@@ -83,7 +83,7 @@ public class FoodLogActivity extends AppCompatActivity {
 
         // Populates ListView
         adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_single_choice,
+                R.layout.custom_simple_list_single_choice,
                 listItems);
         foodListView.setAdapter(adapter);
         foodListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
@@ -192,9 +192,14 @@ public class FoodLogActivity extends AppCompatActivity {
                 while (iterator.hasNext()) {
                     DataSnapshot next = iterator.next();
                     Food food = next.getValue(Food.class);
+
+                    if (food.name == null)
+                        break;
+
                     String foodString = food.name + " (calories: " + food.calories + "kcal, fat: " +
                             food.fat + "g, carbs: " + food.carbs + "g, protein: " + food.protein +
                             "g)";
+
 
                     String key = next.getKey();
                     listKeys.add(key);
